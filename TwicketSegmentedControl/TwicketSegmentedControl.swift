@@ -100,6 +100,10 @@ open class TwicketSegmentedControl: UIControl {
         }
     }
     
+    open override var intrinsicContentSize: CGSize {
+        return .zero
+    }
+    
     private(set) open var selectedSegmentIndex: Int = 0
     
     private var segments: [String] = []
@@ -174,7 +178,6 @@ open class TwicketSegmentedControl: UIControl {
         [backgroundView, selectedContainerView].forEach { $0.layer.cornerRadius = cornerRadius }
         sliderView.cornerRadius = cornerRadius
         
-        backgroundColor = .white
         backgroundView.backgroundColor = segmentsBackgroundColor
         selectedContainerView.backgroundColor = sliderBackgroundColor
         
